@@ -14,7 +14,10 @@ if(!require("pacman")) install.packages("pacman")
 pacman::p_load(pacman, rio, party, tidyverse)
 
 #Import data------
-Seattle <- read_csv("data/WA Police Shooting.csv")
+Seattle <- import("https://data.seattle.gov/api/views/mg5r-efcm/rows.csv?accessType=DOWNLOAD&bom=true&format=true") %>%
+   as_tibble()
+
+Seattle
 
 #Data Wrangling ------------ 
 
